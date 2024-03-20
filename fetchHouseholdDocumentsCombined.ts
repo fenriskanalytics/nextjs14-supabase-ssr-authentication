@@ -1,5 +1,5 @@
 // utils/fetchHouseholdDocumentsCombined.ts
-import { supabase } from "@/lib/supabase/supabaseClient";
+import { supabase } from "@/app/api/supabaseClient";
 import { HouseholdDocumentsCombined } from "../types/householdDocumentsCombined";
 
 export async function fetchHouseholdDocumentsCombined(): Promise<

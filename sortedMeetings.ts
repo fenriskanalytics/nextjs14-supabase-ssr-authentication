@@ -1,4 +1,4 @@
-import { CombinedMeeting } from "@/types/combinedMeeting";
+import { CombinedMeeting } from "@/types/combinedMeetingTypes";
 
 // utils.ts
 export const filterMeetingsByDays = (meetings: CombinedMeeting[], days: number) => {
