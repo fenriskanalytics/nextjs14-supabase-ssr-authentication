@@ -4,7 +4,7 @@ import { CombinedMeeting } from "../types/combinedMeeting";
 
 export async function fetchCombinedMeetings(): Promise<CombinedMeeting[]> {
   let { data: combinedMeetings, error } = await supabase
-    .from('combined_meeting_tables')
+    .from<CombinedMeeting>("combined_meeting_tables")
     .select("*");
 
   if (error) {
@@ -12,6 +12,5 @@ export async function fetchCombinedMeetings(): Promise<CombinedMeeting[]> {
     return [];
   }
 
-  return combinedMeetings || [];
+  return combinedMeetings || []; // Return an empty array if combinedMeetings is nullish
 }
-
