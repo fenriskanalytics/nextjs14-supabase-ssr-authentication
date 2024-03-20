@@ -8,7 +8,7 @@ export async function fetchCombinedMeetings(req?: NextApiRequest): Promise<Combi
   if (req) {
     // Fetching data on the server-side
     const { data, error } = await supabase
-      .from<CombinedMeeting>("combined_meeting_tables")
+      .from("combined_meeting_tables")
       .select("*");
 
     if (error) {
@@ -20,7 +20,7 @@ export async function fetchCombinedMeetings(req?: NextApiRequest): Promise<Combi
   } else {
     // Fetching data on the client-side
     let { data: combinedMeetings, error } = await supabase
-      .from<CombinedMeeting>("combined_meeting_tables")
+      .from("combined_meeting_tables")
       .select("*");
 
     if (error) {
